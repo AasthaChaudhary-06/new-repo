@@ -31,3 +31,5 @@ echo "=================================="
 echo "Jenkins setup instructions completed!"
 echo "Access Jenkins at: http://localhost:8080"
 echo "=================================="
+
+echo "Last class"
