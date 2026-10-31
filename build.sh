@@ -1,42 +1,33 @@
 #!/bin/bash
 
-echo "================================"
-echo "       Jenkins Installation"
-echo "================================"
+echo "=================================="
+echo "       JENKINS AUTOMATION"
+echo "=================================="
 
-echo "Updating system packages..."
-sudo apt update -y
+echo "Welcome to Jenkins!"
 
-echo "Installing Java..."
-sudo apt install fontconfig openjdk-21-jre -y
+echo "Step 1: Update system packages"
+echo "sudo apt update"
 
-echo "Checking Java version..."
-java -version
+echo "Step 2: Install Java"
+echo "sudo apt install openjdk-21-jre -y"
 
-echo "Adding Jenkins repository key..."
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "Step 3: Add Jenkins repository"
+echo "Add Jenkins GPG key and repository"
 
-echo "Adding Jenkins repository..."
-echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+echo "Step 4: Install Jenkins"
+echo "sudo apt install jenkins -y"
 
-echo "Updating package list..."
-sudo apt update -y
+echo "Step 5: Start Jenkins"
+echo "sudo systemctl start jenkins"
 
-echo "Installing Jenkins..."
-sudo apt install jenkins -y
+echo "Step 6: Enable Jenkins"
+echo "sudo systemctl enable jenkins"
 
-echo "Starting Jenkins service..."
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+echo "Step 7: Check Jenkins status"
+echo "sudo systemctl status jenkins"
 
-echo "Checking Jenkins status..."
-sudo systemctl status jenkins --no-pager
-
-echo "================================"
-echo " Jenkins installation completed!"
-echo " Open http://localhost:8080"
-echo "================================"
-
-echo "Initial Jenkins Admin Password:"
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+echo "=================================="
+echo "Jenkins setup instructions completed!"
+echo "Access Jenkins at: http://localhost:8080"
+echo "=================================="
